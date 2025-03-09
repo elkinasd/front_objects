@@ -1,0 +1,17 @@
+@use '../../../../assets/styles/variables' as v;
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+mat-toolbar {
+  background-color: v.$background-blue;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 16px;
+  color: white;
+}
+
+.text-button{
+  color: v.$text-white !important;
+}

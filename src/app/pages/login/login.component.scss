@@ -1,0 +1,36 @@
+@use '../../../assets/styles/variables' as v;
+
+.login-wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: v.$background-blue;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 500px;
+  padding: 20px;
+  background-color: v.$card-bg;
+  border-radius: 12px;
+  text-align: center;
+}
+
+mat-card-header.text-center{
+  justify-content: center;
+}
+
+.full-width {
+  display: flex;
+  width: 100%;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+mat-checkbox {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
