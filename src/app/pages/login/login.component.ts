@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 //Servicio
-import { AuthService } from '../../services/auth.service';
+import { AuthService } from '../../services/auth-service/auth.service';
 //Rutas
 import { Router } from '@angular/router';
 //Módulos material
@@ -43,6 +43,7 @@ export class LoginComponent {
       this.authService.login(loginData).subscribe(
         (response) => {
           localStorage.setItem('authToken', response.token);
+          localStorage.setItem('email', loginData.email);
           this.router.navigate(['/dashboard'])
         },
         (error) => {

@@ -1,0 +1,41 @@
+<app-nav></app-nav>
+
+<div class="objectSection">
+  <div class="objectListSeeker" [formGroup]="searchForm">
+    <mat-form-field appearance="outline">
+      <mat-label>¿Qué estás buscando?</mat-label>
+      <input type="text" matInput placeholder="Ingresa lo que estás buscando" formControlName="search">
+    </mat-form-field>
+  </div>
+
+  <div class="objectListContainer">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" *ngIf="dataSource.filteredData.length > 0">
+
+      <ng-container matColumnDef="position">
+        <th mat-header-cell *matHeaderCellDef> No. </th>
+        <td mat-cell *matCellDef="let element; let i = index"> {{i+1}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="objectName">
+        <th mat-header-cell *matHeaderCellDef> Nombre del objeto </th>
+        <td mat-cell *matCellDef="let element"> {{element.objectName}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef> Descripción </th>
+        <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="foundLocation">
+        <th mat-header-cell *matHeaderCellDef> Lugar donde fué encontrado</th>
+        <td mat-cell *matCellDef="let element"> {{element.foundLocation}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <div class="noObjectsFound" *ngIf="dataSource.filteredData.length === 0">
+      <p class="__text">No hemos encontrado nada con lo que ingresaste "{{searchForm.value.search }}"</p>
+    </div>
+  </div>
+</div>

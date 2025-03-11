@@ -11,8 +11,12 @@ import { MATERIAL_MODULES } from '../../material-imports';
   styleUrls: ['./nav.component.scss'],
 })
 export class NavComponent {
-
+  menuOpen = false;
   constructor(private router: Router) { }
+
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
+  }
 
   logOut() {
     localStorage.removeItem('authToken');

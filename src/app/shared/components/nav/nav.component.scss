@@ -3,15 +3,54 @@
 .spacer {
   flex: 1 1 auto;
 }
-
-mat-toolbar {
-  background-color: v.$background-blue;
-  display: flex;
-  justify-content: space-between;
-  padding: 0 16px;
-  color: white;
+.text-button{
+  color: v.$text-primary;
 }
 
-.text-button{
-  color: v.$text-white !important;
+.toolbar {
+  background-color: v.$background-blue;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  color: v.$text-primary;
+  box-shadow: 0px 4px 6px v.$text-shadow;
+}
+
+.brand {
+  font-size: 18px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 16px;
+}
+
+.menu-button {
+  display: none;
+}
+
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background: v.$background-blue;
+  position: absolute;
+  width: 100%;
+  top: 45px;
+  left: 0;
+  z-index: 10;
+}
+
+// Media Queries para hacer responsive
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .menu-button {
+    display: block;
+  }
+
+  .mobile-menu {
+    display: flex;
+  }
 }

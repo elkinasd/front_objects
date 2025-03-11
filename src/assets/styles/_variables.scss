@@ -8,13 +8,17 @@ $text-primary: #2C3E50; // Azul oscuro
 $text-secondary: #7F8C8D; // Gris oscuro
 $text-disabled: #BDC3C7; // Gris claro
 $text-white: #ffff; //Blanco
+$text-shadow:  rgba(0, 0, 0, 0.137); // Sombra suave
+
 
 // 🟦 Fondos
 $background-light: #ECF0F1; // Gris claro
 $background-dark: #34495E; // Azul oscuro profundo
 $background-blue: #628ab3; // Azul
 $background-oliva: #9c9c9b; // Oliva
+$background-error-red:#c51313 !important; //error
 
 // 📊 Tarjetas y sombras
 $card-bg: #FFFFFF; // Fondo blanco para tarjetas
 $card-shadow: rgba(0, 0, 0, 0.1); // Sombra suave
+

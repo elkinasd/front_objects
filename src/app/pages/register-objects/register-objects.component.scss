@@ -1,0 +1,27 @@
+@use '../../../assets/styles/variables' as v;
+
+.register-cotent{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.register-card{
+  margin-top: 10px;
+  width: 800px;
+}
+
+mat-form-field{
+  margin-top: 25px;
+  width: 100%;
+}
+
+.objectsRegisterFormActions{
+  display: flex;
+  justify-content: center;
+}
+
+.btn-cancel{
+  background-color: v.$background-error-red;
+  margin-left: 10px;
+}

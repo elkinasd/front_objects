@@ -1,7 +1,21 @@
-<mat-toolbar>
-  <span>Objetos Perdidos</span>
+<mat-toolbar class="toolbar">
+  <span class="brand">Objetos Perdidos</span>
   <span class="spacer"></span>
-  <a mat-button routerLink="/dashboard" class="text-button">Home</a>
-  <a mat-button routerLink="/register-objects" class="text-button">Registrar Objeto</a>
-  <a mat-button (click)="logOut()" class="text-button">Log-out</a>
+  <div class="nav-links">
+    <a mat-button routerLink="/dashboard" class="text-button">Home</a>
+    <a mat-button routerLink="/register-objects" class="text-button">Registrar Objetos</a>
+    <a mat-button routerLink="/search-objects" class="text-button">Buscar Objetos</a>
+    <button mat-button (click)="logOut()" class="text-button">Log-out</button>
+  </div>
+  <button mat-icon-button class="menu-button" (click)="toggleMenu()">
+    <mat-icon>menu</mat-icon>
+  </button>
 </mat-toolbar>
+
+<!-- Menú desplegable en móviles -->
+<div class="mobile-menu" *ngIf="menuOpen">
+  <a mat-button routerLink="/dashboard" class="text-button">Home</a>
+  <a mat-button routerLink="/register-objects" class="text-button">Registrar Objetos</a>
+  <a mat-button routerLink="/search-objects" class="text-button">Buscar Objetos</a>
+  <button mat-button (click)="logOut()" class="text-button">Log-out</button>
+</div>

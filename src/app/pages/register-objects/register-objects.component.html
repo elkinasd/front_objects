@@ -1,2 +1,60 @@
 <app-nav></app-nav>
-<p>Estamos en el registro de objetos</p>
+
+<div class="register-cotent">
+  <mat-card class="register-card" appearance="outlined">
+    <mat-card-header class="text-center">
+      <mat-card-title>Aquí puedes registrar el objeto encontrado</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <form [formGroup]="objectsRegisterForm">
+        <mat-form-field appearance="outline">
+          <mat-label>Nombre del Objeto</mat-label>
+          <input matInput type="text" formControlName="objectName" required>
+          <mat-error *ngIf="objectsRegisterForm.get('objectName')?.hasError('required')">
+            ⚠ Este campo es obligatorio
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Descripción</mat-label>
+          <textarea matInput type="text" formControlName="description" required></textarea>
+        </mat-form-field>
+
+        <mat-error
+          *ngIf="objectsRegisterForm.get('description')?.hasError('required') && objectsRegisterForm.get('description')?.touched">
+          ⚠ Este campo es obligatorio
+        </mat-error>
+
+
+        <mat-form-field appearance="outline">
+          <mat-label>Ubicacion</mat-label>
+          <input matInput type="text" formControlName="foundLocation" required>
+          <mat-error *ngIf="objectsRegisterForm.get('foundLocation')?.hasError('required')">
+            ⚠ Este campo es obligatorio
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Fecha de encontrado</mat-label>
+          <input matInput type="date" formControlName="foundDate" required>
+          <mat-error *ngIf="objectsRegisterForm.get('foundDate')?.hasError('required')">
+            ⚠ Este campo es obligatorio
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Contacto</mat-label>
+          <input matInput formControlName="contact" readonly>
+        </mat-form-field>
+
+        <div class="objectsRegisterFormActions">
+          <button mat-flat-button class="btn-send" [disabled]="objectsRegisterForm.invalid"
+            (click)="sendForm()">Enviar</button>
+          <a mat-flat-button class="btn-cancel" routerLink="'/dashboard'" (click)="sendHome()">Cancelar</a>
+        </div>
+
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
